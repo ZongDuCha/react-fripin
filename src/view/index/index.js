@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Carousel, WingBlank } from 'antd-mobile';
+import { Link } from 'react-router-dom'
 
 import 'static/sass/index.scss';
 import recy from 'static/img/raw_1527689726.png'
@@ -64,14 +65,14 @@ class Index extends Component{
                 </WingBlank>
 
                 <div className="container">
-                    <div className="wrap">
+                    <Link className="wrap" to="/order">
                         <img src={recy} alt="我是回收者"/>
                         <p>我是回收者</p>
-                    </div>
-                    <div className="wrap">
+                    </Link>
+                    <Link className="wrap" to="/list">
                         <img src={order} alt="我是回收者"/>
                         <p>我要下单</p>
-                    </div>
+                    </Link>
                 </div>
 
             </div>

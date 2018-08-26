@@ -10,9 +10,16 @@ import 'static/sass/main.css';
 
 class Tabbar extends Component{
     constructor(props){
-        super(props)
+		super(props)
+		// 对直接访问网址处理
+		this.tabRouter = props.location.pathname 
+			? props.location.pathname.split('/')[1] 
+			: '' ;
+		if(this.tabRouter != 'list' && this.tabRouter != 'user'){
+			this.tabRouter = 'index'
+		}
         this.state = {
-			selectedTab: 'index',
+			selectedTab: this.tabRouter,
 		};
     }
     
