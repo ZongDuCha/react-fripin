@@ -1,13 +1,11 @@
+import diqu from './diqu';
 import React, {Component} from 'react'
-import { district } from 'antd-mobile-demo-data';
 import { Picker, List } from 'antd-mobile';
-
 import './order.scss'
 import proimg from 'static/img/123123.png'
 class Order extends Component{
     constructor(props){
         super(props)
-        console.log(district)
     }
     deleteImg(){
         alert(`你点击了删除图片`)
@@ -15,14 +13,7 @@ class Order extends Component{
     render() {
         return (
             <div className="order-container">
-                <Picker extra="请选择(可选)"
-                        data={district}
-                        title="Areas"
-                        onOk={e => console.log('ok', e)}
-                        onDismiss={e => console.log('dismiss', e)}
-                        >
-                        <List.Item arrow="horizontal">Multiple & cascader</List.Item>
-                </Picker>
+                
 
                 <div className="pro-img">
                     <li><img src={proimg} alt=""/> <span onClick={this.deleteImg}>X</span></li>
@@ -51,7 +42,14 @@ class Order extends Component{
 
                     <li>
                         <span>回收地区：</span>
-                        <input type="text" placeholder='请输入回收地区'/>
+                        <Picker extra="请选择地区"
+                                data={diqu}
+                                title="请选择地区"
+                                onOk={e => console.log('ok', e)}
+                                onDismiss={e => console.log('dismiss', e)}
+                                >
+                                <List.Item arrow="horizontal"></List.Item>
+                        </Picker>
                     </li>
 
                     <li>
