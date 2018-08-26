@@ -15,7 +15,7 @@ class Tabbar extends Component{
 		this.tabRouter = props.location.pathname 
 			? props.location.pathname.split('/')[1] 
 			: '' ;
-		if(this.tabRouter != 'list' && this.tabRouter != 'user'){
+		if(this.tabRouter !== 'list' && this.tabRouter !== 'user'){
 			this.tabRouter = 'index'
 		}
         this.state = {

@@ -18,7 +18,7 @@ class App extends Component {
 		return (
 			<div style={{ height: '100vh' }}>
 				<BrowserRouter>
-					<div>
+					<div style={{height: '100%'}}>
 						<Route exact path='/' component={Index} />
 						<Route exact path='/order' component={Order} />
 

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { Carousel, WingBlank } from 'antd-mobile';
 import { Link } from 'react-router-dom'
 
-import 'static/sass/index.scss';
+import './index.scss';
 import recy from 'static/img/raw_1527689726.png'
 import order from 'static/img/raw_1527689776.png'
 
