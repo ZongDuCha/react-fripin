@@ -35,28 +35,12 @@ Location.prototype.loadMapApi = function (longitude, latitude) {
     oScript.src = "http://api.map.baidu.com/getscript?v=2.0&ak=A396783ee700cfdb9ba1df281ce36862&services=&t=20140930184510";
     oHead.appendChild(oScript);
     oScript.onload = function (date) {
-        // if(!!BMap){
-        //     var point = new BMap.Point(longitude, latitude);
-        //     var gc = new BMap.Geocoder();
-        //     gc.getLocation(point, function (rs) {
-        //         var addComp = rs.addressComponents;
-        //         self.callback(addComp);
-        //     });
-        // }else{
-        //     setTimeout(() => {
-        //         new Location()
-        //     },100)
-        // }
-        try {
-            var point = new BMap.Point(longitude, latitude);
-            var gc = new BMap.Geocoder();
-            gc.getLocation(point, function (rs) {
-                var addComp = rs.addressComponents;
-                self.callback(addComp);
-            });
-        } catch (error) {
-            
-        }
+        var point = new BMap.Point(longitude, latitude);
+        var gc = new BMap.Geocoder();
+        gc.getLocation(point, function (rs) {
+            var addComp = rs.addressComponents;
+            self.callback(addComp);
+        });
     }
 };
 
