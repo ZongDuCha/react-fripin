@@ -1,6 +1,9 @@
 import diqu from './diqu';
+import resstr from './getMap';
 import React, {Component} from 'react'
 import { Picker, List } from 'antd-mobile';
+import { createForm } from 'rc-form';
+
 import './order.scss'
 import proimg from 'static/img/123123.png'
 class Order extends Component{
@@ -10,11 +13,17 @@ class Order extends Component{
     deleteImg(){
         alert(`你点击了删除图片`)
     }
+    componentDidMount(){
+        var local = new resstr();
+        local.getLocation(function (res) {
+            var q = JSON.stringify(res);
+            alert(q);
+        });
+    }
     render() {
+        const { getFieldProps } = this.props.form;
         return (
             <div className="order-container">
-                
-
                 <div className="pro-img">
                     <li><img src={proimg} alt=""/> <span onClick={this.deleteImg}>X</span></li>
                     <li><img src={proimg} alt=""/> <span>X</span></li>
@@ -45,6 +54,9 @@ class Order extends Component{
                         <Picker extra="请选择地区"
                                 data={diqu}
                                 title="请选择地区"
+                                {...getFieldProps('district', {
+                                    initialValue: ["110000", "110100", "110101"],
+                                })}
                                 onOk={e => console.log('ok', e)}
                                 onDismiss={e => console.log('dismiss', e)}
                                 >
@@ -64,4 +76,5 @@ class Order extends Component{
     }
 }
 
-export default Order;
+var OrderFrom = createForm()(Order)
+export default OrderFrom;
