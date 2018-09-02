@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import './index.scss';
 import recy from 'static/img/raw_1527689726.png'
 import order from 'static/img/raw_1527689776.png'
+import shop from 'static/img/rarw_123wdeq.png'
 
 class Index extends Component{
     constructor(props){
@@ -65,13 +66,17 @@ class Index extends Component{
                 </WingBlank>
 
                 <div className="container">
-                    <Link className="wrap" to="/order">
+                    <Link className="wrap" to="/list">
                         <img src={recy} alt="我是回收者"/>
                         <p>我是回收者</p>
                     </Link>
-                    <Link className="wrap" to="/list">
+                    <Link className="wrap" to="/order">
                         <img src={order} alt="我是回收者"/>
                         <p>我要下单</p>
+                    </Link>
+                    <Link className="wrap" to="/shop">
+                        <img src={shop} alt="我的店铺"/>
+                        <p>我的店铺</p>
                     </Link>
                 </div>
 

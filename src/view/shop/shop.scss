@@ -1,0 +1,106 @@
+$bg: #4eb1f7;
+.shop-container {
+    background: $bg;
+    min-height: 100%;
+    padding: 20px;
+    img {
+        max-width: 100%;
+    }
+    .shop-wrap {
+        background: #fff;
+        border-radius: 12px;
+        padding: 15px;
+    }
+
+    .shop-list {
+        li {
+            background: rgba(78, 177, 247, 0.6);
+            border-radius: 5px;
+            padding: 5px;
+            span {
+                max-width: 80px;
+                vertical-align: sub;
+                color: rgb(39, 38, 38);
+            }
+            input {
+                vertical-align: sub;
+                -webkit-box-flex: 1;
+                    -ms-flex: 1;
+                        flex: 1;
+                height: 23px;
+                background: none;
+                border: none;
+                color: rgb(39, 38, 38);
+            }
+            textarea{
+                width: 100%;
+                background: none;
+                border: none;
+                max-height: 70px;
+            }
+            &+li {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .shop-imgList{
+        display: flex;
+        flex-wrap:wrap;
+        margin-top:20px;
+        li{
+            flex:33.33%;
+            padding:5px;
+            position:relative;
+            img{
+                max-width:100%;
+            }
+            span{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 22px;
+                height: 22px;
+                text-align: center;
+                border-radius: 50%;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 20px;
+                color: #424141;
+            }
+        }
+    }
+
+    .push button{
+        margin-top: 20px;
+        font-size: 16px;
+        text-align: center;
+        border: 0;
+        background: $bg;
+        color: #fff;
+        box-shadow: 0 0px 15px $bg;
+        width: 100%;
+        padding: 10px 0;
+        border-radius: 25px;
+    }
+    .am-list-item {
+        min-height: 16px;
+        padding: 0;
+        padding: 4px 0;
+        background: none;
+    }
+    .am-list-line{
+        .am-list-content{
+            width: 200px;
+            min-width: 73px;
+            font-size: 14px !important;
+        }
+    }
+    
+}
+
+.am-picker-popup{
+    width: 100vw !important;
+}

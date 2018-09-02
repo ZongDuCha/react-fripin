@@ -7,9 +7,6 @@ import { createForm } from 'rc-form';
 import './order.scss'
 import proimg from 'static/img/123123.png'
 class Order extends Component{
-    constructor(props){
-        super(props)
-    }
     deleteImg(){
         alert(`你点击了删除图片`)
     }
